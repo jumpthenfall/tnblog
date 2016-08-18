@@ -1,0 +1,57 @@
+<?php require ADMIN_TEMPLATE_PATH . 'header.html';?>
+<?php require ADMIN_TEMPLATE_PATH . 'left.html';?>
+
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            标签编辑
+            <small>标签</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> 管理中心</a></li>
+            <li><a href="tag.php">标签</a></li>
+            <li class="active">标签编辑</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <form action="tag.php?a=update" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row['id'];?>">
+                        <div class="box-header">
+                            <h3 class="box-title"></h3>
+                            <a href="tag.php?a=list" class="btn btn-default pull-right">标签列表</a>
+                        </div><!-- /.box-header -->
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="inputTitle">标签标题</label>
+                                <input type="text" name="title" placeholder="标题" id="inputTitle" class="form-control" value="<?php echo $row['title'];?>">
+                            </div>
+
+                        </div><!-- /.box-body -->
+                        <div class="box-footer clearfix">
+                            <button class="btn btn-primary" type="submit">提交</button>
+                        </div><!-- /.box-footer -->
+                    </form>
+
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+    </section><!-- /.content -->
+
+    <section class="content-footer">
+        <div class="text-center">
+            &copy;ITbull，泰牛程序员
+        </div>
+    </section><!-- /.content-footer -->
+
+</aside><!-- /.right-side -->
+<?php require ADMIN_TEMPLATE_PATH . 'footer.html';?>

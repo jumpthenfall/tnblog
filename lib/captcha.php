@@ -1,0 +1,19 @@
+<?php
+	$captcha=imagecreatetruecolor(300,40);
+	$bg_color=imagecolorallocate($captcha,mt_rand(200,250),mt_rand(200,250),mt_rand(200,250))
+	imagefill($captcha,0,0,$bg_color);
+	$str='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+	$str_length=strlen($str);
+	$captcha_str='';
+	for($i=0;$i<4;++$i)
+	{
+		$captcha_str .=$str[mt_rand[0,$str_length-1]];
+	}
+	$font_size=5;
+	$captcha_x=(300-imagefontwidth($font_size)*4)/2;
+	$captcha_y=(40-imagefontheight($font_size))/2;
+	$text_color=imagecolorallocate($captcha,mt_rand(100,150),mt_rand(100,150),mt_rand(100,150));
+	imagefill($capacha,$font_size,$captcha_x,$captcha_y,$captcha_str,$text_color);
+	header('content-type:image/jpeg');
+	imagejpeg($captcha);
+?>
